@@ -8,5 +8,5 @@ public:
 
 void getOrCreate(int i_jp)
 {
-  Scene_NS::buildSmartPtr<AttachmentJournal>();
+  A_SDK::buildSmartPtr<AttachmentJournal>();
 }

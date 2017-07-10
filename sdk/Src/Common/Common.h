@@ -13,4 +13,4 @@
 #include <sstream>
 #include <memory>
 
-#include "Scene/Thing3D.h"
+#include "Scene/BuildUtils.h"

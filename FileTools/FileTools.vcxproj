@@ -10,6 +10,7 @@
     <ProjectGuid>{3954BAC3-BBB5-4B69-B977-DA11E077651D}</ProjectGuid>
     <RootNamespace>FileTools</RootNamespace>
     <Keyword>MFCProj</Keyword>
+    <ProjectName>B_Utils</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -45,10 +46,10 @@
     <ClCompile Include="..\sdk\Src\Win\PrecompiledHeader.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="FileToolsMain.cpp" />
+    <ClCompile Include="DllMain.cpp" />
+    <ClCompile Include="Profile.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="FileToolsFwd.h" />
     <ClInclude Include="Profile.h" />
   </ItemGroup>
   <ItemGroup>

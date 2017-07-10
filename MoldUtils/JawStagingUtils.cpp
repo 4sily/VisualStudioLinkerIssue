@@ -14,7 +14,7 @@ void setInitialJawOpeningToParamObject(int lowerJaw, float i_opening)
 
   if (!param)
   {
-    auto paramObj = Scene_NS::buildSmartPtr<Thing3D>();
+    auto paramObj = A_SDK::buildSmartPtr<Thing3D>();
     param = paramObj.release();
   }
 }

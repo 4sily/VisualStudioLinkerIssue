@@ -1,10 +1,7 @@
 #pragma once
 
-template<
-  typename BaseStdException
->
-class ExceptionBase :
-  public BaseStdException
+template<typename BaseStdException>
+class ExceptionBase : public BaseStdException
 {
 public:
   static_assert(std::is_base_of<std::exception, BaseStdException>::value,
@@ -16,3 +13,4 @@ public:
     BaseStdException(i_message.c_str())
   {}
 };
+
