@@ -50,7 +50,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\Exception\Throw.h" />
-    <ClInclude Include="..\Exception\ExceptionBase.h" />
     <ClInclude Include="..\Scene\BuildUtils.h" />
   </ItemGroup>
   <ItemGroup>

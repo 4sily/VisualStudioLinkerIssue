@@ -4,6 +4,5 @@
 
 void TranslationUnit_1(int i_jp)
 {
-  struct S {};
-  A_SDK::build<S>();                // !!! Comment this line --> Build succeeds
+  A_SDK::playRussianRoulette();     // !!! Comment this line --> Build succeeds
 }

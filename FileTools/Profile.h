@@ -1,6 +1,6 @@
 #pragma once
 
-#include <Exception/ExceptionBase.h>
+#include <Exception/Throw.h>
 #include <Common/ExportMacros.h>
 
 #if   defined(FILETOOLS_EXPORTS)
