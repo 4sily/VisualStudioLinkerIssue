@@ -10,9 +10,9 @@ See my question at StackOverflow - link to be added.
 
 # Steps to reproduce
 
-Clone the repository or download it.
-Open the solution - either for Visual Studio 2013 or 2017 (to be added).
-Build solution.
+* Clone the repository or download it.
+* Open the solution - either for Visual Studio 2013 or 2017 (to be added).
+* Build solution.
 
 Result:
 ```
