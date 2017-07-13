@@ -50,7 +50,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\Exception\Throw.h" />
     <ClInclude Include="Exception\Throw.h" />
     <ClInclude Include="Roulette.h" />
   </ItemGroup>
