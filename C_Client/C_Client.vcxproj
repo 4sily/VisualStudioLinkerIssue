@@ -33,7 +33,7 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <PrecompiledHeaderFile>Common/Common.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)\sdk\Src;$(SolutionDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\A_SDK;$(SolutionDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
     <Link>
@@ -43,18 +43,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\sdk\Src\PrecompiledHeader.cpp">
+    <ClCompile Include="..\A_SDK\PrecompiledHeader.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="TranslationUnit_2.cpp" />
     <ClCompile Include="TranslationUnit_1.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\A_SDK\AlignSDK.vcxproj">
+      <Project>{cd1c769a-6e82-47c0-9309-696a3d25765b}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\B_Utils\B_Utils.vcxproj">
       <Project>{3954bac3-bbb5-4b69-b977-da11e077651d}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\sdk\Src\AlignSDK.vcxproj">
-      <Project>{cd1c769a-6e82-47c0-9309-696a3d25765b}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
