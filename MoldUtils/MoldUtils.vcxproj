@@ -34,6 +34,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <PrecompiledHeaderFile>Common/Common.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>$(SolutionDir)\sdk\Src;$(SolutionDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
     <Link>
       <AdditionalOptions>/FIXED:NO %(AdditionalOptions)</AdditionalOptions>
@@ -42,18 +43,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\sdk\Src\Win\PrecompiledHeader.cpp">
+    <ClCompile Include="..\sdk\Src\PrecompiledHeader.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="TranslationUnit_2.cpp" />
     <ClCompile Include="TranslationUnit_1.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\sdk\Src\Win\AlignSDK.vcxproj">
-      <Project>{CD1C769A-6E82-47C0-9309-696A3D25765B}</Project>
-    </ProjectReference>
     <ProjectReference Include="..\FileTools\FileTools.vcxproj">
       <Project>{3954bac3-bbb5-4b69-b977-da11e077651d}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\sdk\Src\AlignSDK.vcxproj">
+      <Project>{cd1c769a-6e82-47c0-9309-696a3d25765b}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

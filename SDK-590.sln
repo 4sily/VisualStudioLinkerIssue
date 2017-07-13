@@ -3,18 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FileTools", "FileTools\FileTools.vcxproj", "{3954BAC3-BBB5-4B69-B977-DA11E077651D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "B_Utils", "FileTools\FileTools.vcxproj", "{3954BAC3-BBB5-4B69-B977-DA11E077651D}"
 	ProjectSection(ProjectDependencies) = postProject
 		{CD1C769A-6E82-47C0-9309-696A3D25765B} = {CD1C769A-6E82-47C0-9309-696A3D25765B}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MoldUtils", "MoldUtils\MoldUtils.vcxproj", "{DF3DFB71-1317-4214-9034-CE3E3D0AFA77}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "C_Client", "MoldUtils\MoldUtils.vcxproj", "{DF3DFB71-1317-4214-9034-CE3E3D0AFA77}"
 	ProjectSection(ProjectDependencies) = postProject
 		{CD1C769A-6E82-47C0-9309-696A3D25765B} = {CD1C769A-6E82-47C0-9309-696A3D25765B}
 		{3954BAC3-BBB5-4B69-B977-DA11E077651D} = {3954BAC3-BBB5-4B69-B977-DA11E077651D}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AlignSDK", "sdk\Src\Win\AlignSDK.vcxproj", "{CD1C769A-6E82-47C0-9309-696A3D25765B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "A_SDK", "sdk\Src\AlignSDK.vcxproj", "{CD1C769A-6E82-47C0-9309-696A3D25765B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -2,11 +2,12 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClInclude Include="..\Exception\Throw.h" />
-    <ClInclude Include="..\Scene\BuildUtils.h" />
+    <ClInclude Include="Roulette.h" />
+    <ClInclude Include="Exception\Throw.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PrecompiledHeader.cpp" />
     <ClCompile Include="DllMain.cpp" />
-    <ClCompile Include="..\Scene\BuildUtils.cpp" />
+    <ClCompile Include="Roulette.cpp" />
   </ItemGroup>
 </Project>

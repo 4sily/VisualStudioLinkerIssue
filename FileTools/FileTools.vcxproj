@@ -36,6 +36,7 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <PrecompiledHeaderFile>Common/Common.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>..\sdk\Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
     <Link>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -43,7 +44,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\sdk\Src\Win\PrecompiledHeader.cpp">
+    <ClCompile Include="..\sdk\Src\PrecompiledHeader.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="DllMain.cpp" />
@@ -53,8 +54,8 @@
     <ClInclude Include="Profile.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\sdk\Src\Win\AlignSDK.vcxproj">
-      <Project>{CD1C769A-6E82-47C0-9309-696A3D25765B}</Project>
+    <ProjectReference Include="..\sdk\Src\AlignSDK.vcxproj">
+      <Project>{cd1c769a-6e82-47c0-9309-696a3d25765b}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
