@@ -50,7 +50,7 @@
     <ClCompile Include="TranslationUnit_1.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FileTools\FileTools.vcxproj">
+    <ProjectReference Include="..\B_Utils\B_Utils.vcxproj">
       <Project>{3954bac3-bbb5-4b69-b977-da11e077651d}</Project>
     </ProjectReference>
     <ProjectReference Include="..\sdk\Src\AlignSDK.vcxproj">
