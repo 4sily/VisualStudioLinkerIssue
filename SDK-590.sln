@@ -7,7 +7,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "B_Utils", "B_Utils\B_Utils.
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "C_Client", "C_Client\C_Client.vcxproj", "{DF3DFB71-1317-4214-9034-CE3E3D0AFA77}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "A_SDK", "A_SDK\AlignSDK.vcxproj", "{CD1C769A-6E82-47C0-9309-696A3D25765B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "A_SDK", "A_SDK\A_SDK.vcxproj", "{CD1C769A-6E82-47C0-9309-696A3D25765B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
