@@ -1,16 +1,16 @@
 #pragma once
 
-#include "Common/WinCommon.h"
 #include "Common/ExportMacros.h"
 
-#include <cassert>
-#include <cctype>
-#include <climits>
-#include <cmath>
-#include <cstdarg>
-#include <cstdlib>
-#include <cstring>
-#include <sstream>
-#include <memory>
+#define WINVER 0x0601       // Windows 7
 
-#include "Roulette.h"
+#if (defined _AFXDLL)
+#include <afxwin.h>
+#include <afxole.h>
+#include <afxdisp.h>
+#else
+#include <windows.h>
+#endif
+
+#include <cctype>
+#include <stdexcept>

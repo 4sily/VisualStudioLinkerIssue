@@ -1,6 +1,8 @@
 #include <Common/Common.h>
 
-void TranslationUnit_2(int lowerJaw, float i_opening)
+#include <A_SDK/Roulette.h>
+
+void TranslationUnit_2()
 {
   A_SDK::playRussianRoulette();     // !!! Comment this line --> Build succeeds
 }
