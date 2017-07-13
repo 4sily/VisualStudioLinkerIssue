@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Common/CommonFwd.h"
-#include "Common/Platform.h"
+#include "Common/WinCommon.h"
+#include "Common/ExportMacros.h"
 
 #include <cassert>
 #include <cctype>
