@@ -27,7 +27,7 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <PreprocessorDefinitions>_WINDOWS;FILETOOLS_EXPORTS;WIN32;NDEBUG;PNG_SETJMP_SUPPORTED;PNG_READ_BGR_SUPPORTED;PNG_WRITE_BGR_SUPPORTED;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WINDOWS;B_EXPORTS;WIN32;NDEBUG;PNG_SETJMP_SUPPORTED;PNG_READ_BGR_SUPPORTED;PNG_WRITE_BGR_SUPPORTED;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>

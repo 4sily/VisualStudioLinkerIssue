@@ -3,7 +3,7 @@
 #include <Exception/Throw.h>
 #include <Common/ExportMacros.h>
 
-#if   defined(FILETOOLS_EXPORTS)
+#if defined(B_EXPORTS)
 #define _B_UTILS_EXPORTS_CLASS      _EXPORT_CLASS_
 #define _B_UTILS_EXPORTS_FUNC(type) _EXPORT_FUNC_(type)
 #else
