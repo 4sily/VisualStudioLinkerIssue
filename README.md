@@ -4,7 +4,27 @@ A toy sample that showcases an issue with Visual Studio linker which I'm failing
 From first look this issue might seem relevant old bug in VS2010 (see [on StackOverflow](https://stackoverflow.com/questions/17987171/inherit-from-stdstring-without-npos-problems-in-dlls)).
 But the error is different: no _"unresolved external symbol"_, but _"already defined"_ instead.
 
-# More context
+# About this repository
+
+Each of projects are DLL's.
+Each uses precompiled headers, defined in A_SDK/Common/Common.h
+
+Dependencies:
+* B_Utils --> A_SDK
+* C_Client --> B_Utils, A_SDK
+
+Project files are trimmed to the bare minimum, so only a single configuration (Release x64) is enabled.
+Other configurations may be re-enabled if needed, they produce the same result.
+
+Only necessary files are left in each project. For instance, C_Client contains only 2.
+The names are self-describing.
+
+Pay attention to comments like this one:
+```
+// !!! Comment this line --> Build succeeds
+```
+
+# Details
 
 See my question at StackOverflow - link to be added.
 
