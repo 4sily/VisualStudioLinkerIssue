@@ -8,7 +8,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{DF3DFB71-1317-4214-9034-CE3E3D0AFA77}</ProjectGuid>
-    <RootNamespace>MoldUtils</RootNamespace>
+    <RootNamespace>C_Client</RootNamespace>
     <Keyword>MFCProj</Keyword>
     <ProjectName>C_Client</ProjectName>
   </PropertyGroup>

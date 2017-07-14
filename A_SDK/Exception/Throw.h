@@ -1,6 +1,8 @@
 #pragma once
 
+#if defined(_MSC_VER) && _MSC_VER < 1900
 #include "nested_exception.h" // Functionality not implemented by VS2013; remove this in VS2017.
+#endif
 
 template<typename BaseStdException>
 class ExceptionBase : public BaseStdException
