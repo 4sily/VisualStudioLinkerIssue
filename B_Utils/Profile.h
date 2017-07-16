@@ -13,8 +13,14 @@
 
 #include <string>
 
-struct _B_UTILS_EXPORTS_CLASS Error
-  : public ExceptionBase<std::runtime_error>
+namespace B_Utils
+{
+    void _B_UTILS_EXPORTS_CLASS hackToForceGenerationOfStaticLib();
+}
+
+struct
+    _B_UTILS_EXPORTS_CLASS  // !!! Comment this line --> Build succeeds
+    Error : public ExceptionBase<std::runtime_error>
 {
   // definition is located in *.cpp file to enforce the generation of static library (B_Utils.lib)
   Error(std::string&& s);
