@@ -3,4 +3,4 @@
 
 void B_Utils::hackToForceGenerationOfStaticLib() {}
 
-Error::Error(std::string&& s) : ExceptionBaseClass(std::move(s)) { }
+B_Utils::Error::Error(std::string&& s) : ExceptionBaseClass(std::move(s)) { }
