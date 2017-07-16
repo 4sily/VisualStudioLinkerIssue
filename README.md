@@ -7,20 +7,27 @@ But the error is different: no _"unresolved external symbol"_, but _"already def
 # Problem description
 
 This problem has been discovered in a large Visual Studio solution (~200 projects) that belongs to a proprietary code base.
-I've been developing a (yet another) small library for exception handling, and during its integration I've noticed that it's causing a strange linker error. Luckily, I've found a simple workaround (see below). But the question about the root cause remained, so I trimmed down the initial behemoth solution into 3 projects, each with just several files. Then I managed to reproduced the same issue in a solution created from scratch. Then I've got the same result once I converted the solution and the projects to the latest Visual Studio.
+
+I've been developing a (yet another) small library for exception handling, and during its integration I've noticed that it's causing a strange linker error. Luckily, I've found a simple workaround (see below). But the question about the root cause remained. So the follow-up was:
+
+1. I trimmed down the initial 'behemoth' solution into 3 projects, each with just several files. 
+2. Then I managed to reproduced the same issue in a solution created from scratch. 
+3. Then I've got the same result once I converted the solution and the projects to the latest Visual Studio.
+
 The resulting repro-case is expressed by this repository.
 
 # Essence of the problem
 
-Assume we have 3 DLL's: A_SDK, B_Utils and C_Client. 
-**UPD**: they don't have to be DLL's, what matters is using declspec(dllimport), [see](https://github.com/4sily/VisualStudioLinkerIssue/issues/4).
+Assume we have 3 DLL's: **A_SDK**, **B_Utils** and **C_Client**.
+
+(**UPDATE**: they don't have to be DLL's, what matters is using declspec(dllimport), [see](https://github.com/4sily/VisualStudioLinkerIssue/issues/4))
 
 These 3 projects form the following dependency graph:
 
-* B_Utils --> A_SDK
-* C_Client --> B_Utils, A_SDK
+* **B_Utils** --> **A_SDK**
+* **C_Client** --> **B_Utils**, **A_SDK**
 
-A_SDK defines a template class and a template or inline utility function that may throw an exception being the instantiation of that template
+**A_SDK** defines a template class and a template or inline utility function that may throw an exception being the instantiation of that template
 
 ```
 (ExceptionBase.h)
@@ -39,7 +46,7 @@ inline void foo()
 
 ```
 
-B_Utils defines its own error class
+**B_Utils** defines its own error class
 
 ```
 (Error.h)
@@ -56,7 +63,7 @@ struct _B_UTILS_EXPORTS_CLASS Error : public ExceptionBase<std::runtime_error>
 { Error(std::string&& s); } // ctor definition is in *.cpp file
 ```
 
-C_Client includes headers from both A_SDK and B_Utils, *exactly like in the sample below*.
+**C_Client** includes headers from both **A_SDK** and **B_Utils**, *exactly like in the sample below*.
 And then the build fails.
 
 ```
