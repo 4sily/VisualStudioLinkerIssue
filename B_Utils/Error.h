@@ -1,21 +1,20 @@
 #pragma once
 
 #include <Exception/Throw.h>
-#include <Common/ExportMacros.h>
 
 #if defined(B_EXPORTS)
-#define _B_UTILS_EXPORTS_CLASS      _EXPORT_CLASS_
-#define _B_UTILS_EXPORTS_FUNC(type) _EXPORT_FUNC_(type)
+#define _B_UTILS_EXPORTS_CLASS      _EXPORT_ATTR_
+#define _B_UTILS_EXPORTS_FUN        _EXPORT_ATTR_
 #else
-#define _B_UTILS_EXPORTS_CLASS      _IMPORT_CLASS_
-#define _B_UTILS_EXPORTS_FUNC(type) _IMPORT_FUNC_(type)
+#define _B_UTILS_EXPORTS_CLASS      _IMPORT_ATTR_
+#define _B_UTILS_EXPORTS_FUN        _IMPORT_ATTR_
 #endif
 
 #include <string>
 
 namespace B_Utils
 {
-    void _B_UTILS_EXPORTS_CLASS hackToForceGenerationOfStaticLib();
+    void _B_UTILS_EXPORTS_FUN hackToForceGenerationOfStaticLib();
 
     struct
         _B_UTILS_EXPORTS_CLASS  // !!! Comment this line --> Build succeeds
