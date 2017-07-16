@@ -1,7 +1,7 @@
 #include <Common/Common.h>
 
 #include <A_SDK/Roulette.h>
-#include <B_Utils/Profile.h>        // !!! Comment this line --> Build succeeds
+#include <B_Utils/Error.h>        // !!! Comment this line --> Build succeeds
 
 void TranslationUnit_1()
 {
