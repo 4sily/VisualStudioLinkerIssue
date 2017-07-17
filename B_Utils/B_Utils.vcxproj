@@ -48,10 +48,10 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="DllMain.cpp" />
-    <ClCompile Include="Profile.cpp" />
+    <ClCompile Include="Error.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Profile.h" />
+    <ClInclude Include="Error.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\A_SDK\A_SDK.vcxproj">
