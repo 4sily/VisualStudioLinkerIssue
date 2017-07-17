@@ -1,4 +1,4 @@
-# Visual Studio linker issue example
+# Visual Studio linker issue: when __declspec(dllimport) meets template class
 A toy sample that showcases an issue with Visual Studio linker which I'm failing to explain.
 
 From first look this issue might seem relevant old bug in VS2010 (see [on StackOverflow](https://stackoverflow.com/questions/17987171/inherit-from-stdstring-without-npos-problems-in-dlls)).
@@ -113,6 +113,20 @@ When exploring the repository, pay attention to comments like this one:
 // !!! Comment this line --> Build succeeds
 ```
 
+Result:
+```
+3>B_Utils.lib(B_Utils.dll) : error LNK2005: "public: __cdecl ExceptionBase<class std::runtime_error>::ExceptionBase<class std::runtime_error>(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (??0?$ExceptionBase@Vruntime_error@std@@@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) already defined in TranslationUnit_2.obj
+3>B_Utils.lib(B_Utils.dll) : error LNK2005: "public: virtual __cdecl ExceptionBase<class std::runtime_error>::~ExceptionBase<class std::runtime_error>(void)" (??1?$ExceptionBase@Vruntime_error@std@@@@UEAA@XZ) already defined in TranslationUnit_2.obj
+3>B_Utils.lib(B_Utils.dll) : error LNK2005: "public: __cdecl ExceptionBase<class std::runtime_error>::ExceptionBase<class std::runtime_error>(class ExceptionBase<class std::runtime_error> const &)" (??0?$ExceptionBase@Vruntime_error@std@@@@QEAA@AEBV0@@Z) already defined in TranslationUnit_2.obj
+3>D:\tmp\SDK-590\x64\Release\C_Client.dll : fatal error LNK1169: one or more multiply defined symbols found
+```
+
+# Steps to reproduce
+
+* Clone the repository or download it.
+* Open the solution - either for Visual Studio 2013 or 2017.
+* Build solution.
+
 # Workaround
 
 Once I changed
@@ -129,20 +143,5 @@ the build is fine, and I'm still able to use B_Utils::Error class in its clients
 This was sufficient for my needs.
 However, if this class were more complex, I would have to mark each of its public methods with _B_UTILS_EXPORTS_CLASS, which doesn't really look like a proper solution.
 
-# Details
+# Hypothesis
 
-See my question at StackOverflow - link to be added.
-
-# Steps to reproduce
-
-* Clone the repository or download it.
-* Open the solution - either for Visual Studio 2013 or 2017.
-* Build solution.
-
-Result:
-```
-3>B_Utils.lib(B_Utils.dll) : error LNK2005: "public: __cdecl ExceptionBase<class std::runtime_error>::ExceptionBase<class std::runtime_error>(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (??0?$ExceptionBase@Vruntime_error@std@@@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) already defined in TranslationUnit_2.obj
-3>B_Utils.lib(B_Utils.dll) : error LNK2005: "public: virtual __cdecl ExceptionBase<class std::runtime_error>::~ExceptionBase<class std::runtime_error>(void)" (??1?$ExceptionBase@Vruntime_error@std@@@@UEAA@XZ) already defined in TranslationUnit_2.obj
-3>B_Utils.lib(B_Utils.dll) : error LNK2005: "public: __cdecl ExceptionBase<class std::runtime_error>::ExceptionBase<class std::runtime_error>(class ExceptionBase<class std::runtime_error> const &)" (??0?$ExceptionBase@Vruntime_error@std@@@@QEAA@AEBV0@@Z) already defined in TranslationUnit_2.obj
-3>D:\tmp\SDK-590\x64\Release\C_Client.dll : fatal error LNK1169: one or more multiply defined symbols found
-```
