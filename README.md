@@ -144,6 +144,19 @@ This was sufficient for my needs.
 However, if this class were more complex, I would have to mark each of its public methods with _B_UTILS_EXPORTS_CLASS, which doesn't really look like a proper solution.
 
 # Hypothesis
+ 	
+My working hypothesis is the following. When I export the whole type via 
+
+```
+struct _B_UTILS_EXPORTS_CLASS Error : public ExceptionBase<std::runtime_error>
+```
+the template instantiation ExceptionBase<std::runtime_error> gets exported too. 
+
+In the latter case, when I only export ctor: 
+```
+_B_UTILS_EXPORTS_CLASS Error();
+```
+the template instantiation is not exported, hence the linker sees only one symbol in C_Client. What I don't understand: why isn't it able to merge the symbols in the former case? Just like it happens e.g. for static libraries.
 
 # Discussion
 
