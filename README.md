@@ -145,3 +145,9 @@ However, if this class were more complex, I would have to mark each of its publi
 
 # Hypothesis
 
+# Discussion
+
+Posted questions:
+* [at StackOverflow](https://stackoverflow.com/questions/45133791/visual-studio-linker-error-when-template-class-meets-declspecimport);
+* [at MSDN forum](https://social.msdn.microsoft.com/Forums/en-US/31927e7c-bd97-4083-8686-c8b7d59064e7/linker-error-when-template-class-meets-declspecimport);
+* [via Visual Studio "send feedback"](https://developercommunity.visualstudio.com/content/problem/80966/linker-error-when-template-class-meets-declspecimp.html)
