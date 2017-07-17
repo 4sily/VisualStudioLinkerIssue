@@ -51,14 +51,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Exception\Throw.h" />
-    <ClInclude Include="Roulette.h" />
+    <ClInclude Include="MakeThingsGood.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DllMain.cpp" />
     <ClCompile Include="PrecompiledHeader.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Roulette.cpp" />
+    <ClCompile Include="MakeThingsGood.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
 </Project>

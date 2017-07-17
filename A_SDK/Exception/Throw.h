@@ -15,14 +15,3 @@ public:
 
   ExceptionBase(const std::string& i_message) : BaseStdException(i_message.c_str()) {}
 };
-
-#define __THROW_WITH_NESTED
-
-#ifdef __THROW_WITH_NESTED
-#define MY_THROW(BaseException, message) \
-  std::throw_with_nested(ExceptionBase<BaseException>(message))
-#else
-// Results in linker errors too, but slightly different (1 error reported instead of 3).
-#define MY_THROW(BaseException, message) \
-  throw ExceptionBase<BaseException>(message)
-#endif
