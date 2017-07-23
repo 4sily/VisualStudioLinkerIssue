@@ -1,3 +1,17 @@
+# Table of contents
+<!-- TOC -->
+
+- [Table of contents](#table-of-contents)
+- [Visual Studio linker issue: when __declspec(dllimport) meets template class](#visual-studio-linker-issue-when-__declspecdllimport-meets-template-class)
+- [Problem description](#problem-description)
+- [Essence of the problem](#essence-of-the-problem)
+- [Repository contents](#repository-contents)
+- [Steps to reproduce](#steps-to-reproduce)
+- [Workaround](#workaround)
+- [Hypothesis](#hypothesis)
+- [Discussion](#discussion)
+
+<!-- /TOC -->
 # Visual Studio linker issue: when __declspec(dllimport) meets template class
 A toy sample that showcases an issue with Visual Studio linker which I'm failing to explain.
 
