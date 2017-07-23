@@ -22,6 +22,8 @@ Assume we have 3 DLL's: **A_SDK**, **B_Utils** and **C_Client**.
 
 (**UPDATE**: they don't have to be DLL's, what matters is using declspec(dllimport), [see](https://github.com/4sily/VisualStudioLinkerIssue/issues/4))
 
+**UPDATE 2**: Actually, 2 DLL's is enough to expose the same problem in Debug x64. See `LinkerIssue_VS2017_trimmed.sln`. This new minimalistic solution contains of 2 projects, 5 source files. For details, check [this StackOverflow answer](https://stackoverflow.com/a/45245389/5722863).
+
 These 3 projects form the following dependency graph:
 
 * **B_Utils** --> **A_SDK**
@@ -162,5 +164,7 @@ the template instantiation is not exported, hence the linker sees only one symbo
 
 Posted questions:
 * [at StackOverflow](https://stackoverflow.com/questions/45133791/visual-studio-linker-error-when-template-class-meets-declspecimport);
+  + Many thanks to [Ofek Shilon](https://stackoverflow.com/users/89706/ofek-shilon) who investigated this issue further and found an even smaller reprocase - check `LinkerIssue_VS2017_trimmed.sln`.
 * [at MSDN forum](https://social.msdn.microsoft.com/Forums/en-US/31927e7c-bd97-4083-8686-c8b7d59064e7/linker-error-when-template-class-meets-declspecimport);
 * [via Visual Studio "send feedback"](https://developercommunity.visualstudio.com/content/problem/80966/linker-error-when-template-class-meets-declspecimp.html)
+  + Visual Studio support team triaged this issue, and as a result they filed a bug. Currently investigation is ongoing.
